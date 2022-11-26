@@ -54,14 +54,17 @@ class LinkedList {
             prev = temp;
             temp = temp.next;
         }
-
-
         // Unlink the node from linked list
         prev.next = temp.next;
-        System.out.println(prev.next);
 
     }
 
+    public void deleteFromHead(int key){
+        Node temp = head, prev = null;
+        if (temp != null && temp.data == key) {
+            head = temp.next; // Changed head
+        }
+    }
 
     public void printList() {
         Node tnode = head;
@@ -75,12 +78,14 @@ class LinkedList {
     public static void main(String[] args) {
 
         LinkedList list = new LinkedList();
-        list.append(1);
-        list.push(2);
         list.push(3);
+        list.push(2);
+        list.push(1);
+        System.out.println("linked list befor oprations: ");
+        list.printList();
         list.deleteFromMiddle(2);
-        list.insertAfter(list.head.next, 5);
-        //System.out.println("Linked list is: ");
+        list.deleteFromHead(1);
+        System.out.println("\nlinked list after oprations: ");
         list.printList();
     }
 }
