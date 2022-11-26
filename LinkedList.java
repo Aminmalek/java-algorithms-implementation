@@ -66,6 +66,19 @@ class LinkedList {
         }
     }
 
+    public void reverse(LinkedList list){
+        Node prev = null, curr = list.head, next=null;
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+
+        }
+        list.head = prev;
+
+    }
+
     public void printList() {
         Node tnode = head;
         while (tnode != null) {
@@ -83,8 +96,11 @@ class LinkedList {
         list.push(1);
         System.out.println("linked list befor oprations: ");
         list.printList();
-        list.deleteFromMiddle(2);
-        list.deleteFromHead(1);
+        //list.deleteFromMiddle(2);
+        //list.deleteFromHead(1);
+        //System.out.println("\nlinked list after oprations: ");
+        //list.printList();
+        //list.reverse(list);
         System.out.println("\nlinked list after oprations: ");
         list.printList();
     }
