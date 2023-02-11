@@ -1,4 +1,5 @@
 public class Stack {
+
     // store elements of stack
     private int arr[];
     // represent top of stack
@@ -6,14 +7,16 @@ public class Stack {
     // total capacity of the stack
     private int capacity;
 
-    // Creating a stack
-    Stack(int size) {
+
+    // initialize stack
+    public Stack(int size) {
         // initialize the array
         // initialize the stack variables
         arr = new int[size];
         capacity = size;
         top = -1;
     }
+
 
     public int push(int x) {
         if (isFull()) System.out.println("Stack OverFlow");
