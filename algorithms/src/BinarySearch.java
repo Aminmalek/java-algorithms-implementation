@@ -2,9 +2,9 @@ public class BinarySearch {
     public static int binarySearch (int[] sortedArray,int key){
         int lowerBound = 1;
         int upperBound = sortedArray.length;
-        int keyPosition = -1 ;
+        int keyPosition;
 
-        while (keyPosition == -1){
+        while (true){
             if (upperBound < lowerBound){
                 System.out.println("x does not exists");
                 break;
@@ -29,7 +29,7 @@ public class BinarySearch {
     }
     public static void main(String[] args) {
         int[] a1= {10,20,30,50,70,90};
-        int key = 50;
+        int key = 90;
         System.out.println(binarySearch( a1,key));
     }
 }
