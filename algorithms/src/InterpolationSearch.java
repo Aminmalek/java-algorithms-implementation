@@ -25,10 +25,11 @@ public class InterpolationSearch {
         return -1;
 
     }
+
     public static void main(String[] args) {
-        int[] a1= {10,20,30,40,50,60};
+        int[] a1 = {10, 20, 30, 40, 50, 60};
         int key = 50;
-        System.out.println(interpolationSearch( a1,key));
+        System.out.println(interpolationSearch(a1, key));
     }
 }
 
