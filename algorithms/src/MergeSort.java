@@ -1,26 +1,5 @@
 public class MergeSort {
 
-    public static void mergeSort(int[] arr, int mid) {
-        var n = arr.length;
-        if (n < 2) {
-            return;
-        }
-        int mid = n / 2;
-        int[] l = new int[mid];
-        int[] r = new int[n - mid];
-
-        for (int i = 0; i < mid; i++) {
-            l[i] = arr[i];
-        }
-        for (int i = mid; i < n; i++) {
-            r[i - mid] = arr[i];
-        }
-        mergeSort(l, mid);
-        mergeSort(r, n - mid);
-
-        merge(arr, l, r, mid, n - mid);
-    }
-
     public static void merge(
             int[] a, int[] l, int[] r, int left, int right) {
 
@@ -40,9 +19,31 @@ public class MergeSort {
         }
     }
 
-    public static void main(String[] args) {
+    public static void mergeSort(int[] a, int n) {
+        if (n < 2) {
+            return;
+        }
+        int mid = n / 2;
+        int[] l = new int[mid];
+        int[] r = new int[n - mid];
 
-        int[] arr = { 5, 1, 6, 2, 3, 4 };
-        mergeSort(arr, mid);
+        for (int i = 0; i < mid; i++) {
+            l[i] = a[i];
+        }
+        for (int i = mid; i < n; i++) {
+            r[i - mid] = a[i];
+        }
+        mergeSort(l, mid);
+        mergeSort(r, n - mid);
+
+        merge(a, l, r, mid, n - mid);
+    }
+    public static void printList(int[] a, int n){
+        
+    }
+    public static void main(String[] args) {
+        int[] arr = {10, 14, 19, 26, 27, 31, 33, 35, 42, 44};
+
+        System.out.println(MergeSort.mergeSort(arr,10));
     }
 }
