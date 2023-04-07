@@ -21,11 +21,10 @@ public class MergeSort {
             rightHalf[i - midIndex] = arr[i];
 
         }
-        System.out.println(Arrays.toString(rightHalf));
         mergeSort(leftHalf);
         mergeSort(rightHalf);
-        System.out.println(Arrays.toString(rightHalf));
-//        merge(arr, leftHalf, rightHalf);
+
+        merge(arr, leftHalf, rightHalf);
         return arr;
     }
 
