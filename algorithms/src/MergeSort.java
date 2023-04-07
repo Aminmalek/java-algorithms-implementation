@@ -1,49 +1,72 @@
+import java.util.Arrays;
+
+
 public class MergeSort {
 
-    public static void merge(
-            int[] a, int[] l, int[] r, int left, int right) {
+    public static int[] mergeSort(int[] arr) {
+        int arrLen = arr.length;
+        if (arrLen < 2) {
+            return arr;
 
-        int i = 0, j = 0, k = 0;
-        while (i < left && j < right) {
-            if (l[i] <= r[j]) {
-                a[k++] = l[i++];
+        }
+        int midIndex = arrLen / 2;
+        int[] leftHalf = new int[midIndex];
+        int[] rightHalf = new int[arrLen - midIndex];
+        for (int i = 0; i < midIndex; i++) {
+
+            leftHalf[i] = arr[i];
+
+        }
+        for (int i = midIndex; i < arrLen; i++) {
+            rightHalf[i - midIndex] = arr[i];
+
+        }
+        System.out.println(Arrays.toString(rightHalf));
+        mergeSort(leftHalf);
+        mergeSort(rightHalf);
+        System.out.println(Arrays.toString(rightHalf));
+//        merge(arr, leftHalf, rightHalf);
+        return arr;
+    }
+
+    public static void merge(int[] arr, int[] leftHalf, int[] rightHalf) {
+        int leftSize = leftHalf.length;
+        int rightSize = rightHalf.length;
+        int i = 0;
+        int j = 0;
+        int k = 0;
+
+        while (i < leftSize && j < rightSize) {
+            if (leftHalf[i] <= rightHalf[j]) {
+                arr[k] = leftHalf[i];
+                i++;
+
             } else {
-                a[k++] = r[j++];
+                arr[k] = rightHalf[j];
+                j++;
             }
+            k++;
         }
-        while (i < left) {
-            a[k++] = l[i++];
+        while (i < leftSize) {
+            arr[k] = leftHalf[i];
+            i++;
+            k++;
+
         }
-        while (j < right) {
-            a[k++] = r[j++];
+        while (j < rightSize) {
+            arr[k] = rightHalf[j];
+            j++;
+            k++;
+
         }
+
     }
 
-    public static void mergeSort(int[] a, int n) {
-        if (n < 2) {
-            return;
-        }
-        int mid = n / 2;
-        int[] l = new int[mid];
-        int[] r = new int[n - mid];
 
-        for (int i = 0; i < mid; i++) {
-            l[i] = a[i];
-        }
-        for (int i = mid; i < n; i++) {
-            r[i - mid] = a[i];
-        }
-        mergeSort(l, mid);
-        mergeSort(r, n - mid);
-
-        merge(a, l, r, mid, n - mid);
-    }
-    public static void printList(int[] a, int n){
-        
-    }
     public static void main(String[] args) {
-        int[] arr = {10, 14, 19, 26, 27, 31, 33, 35, 42, 44};
+        int[] arr1 = {20, 14, 19, 80, 31, 3, 120, 42, 26};
+        System.out.println(Arrays.toString(MergeSort.mergeSort(arr1)));
 
-        System.out.println(MergeSort.mergeSort(arr,10));
+
     }
 }
