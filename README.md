@@ -1,7 +1,7 @@
-Java Algorithms implementation
+###Java Algorithms implementation
 
 This repository contains implementations of various algorithms and data structures in Java.
-Contents
+##Contents
 The repository contains the following folders:
 algorithms/src: This folder contains the Java source code for the algorithms and data structures.
 dataStructures/src: This folder contains the Java source code for the algorithms and data structures.
@@ -16,12 +16,12 @@ Insertion sort
 Merge sort
 Quick sort
 
-Data Structures
+##Data Structures
 The following data structures are currently implemented in this repository:
 Linked list
 Stack
 Queue
 Hash table
 
-Contributions
+##Contributions
 Contributions to this repository are welcome! If you find a bug or error in any of the implementations, or if you would like to add a new algorithm or data structure, please feel free to submit a pull request.
