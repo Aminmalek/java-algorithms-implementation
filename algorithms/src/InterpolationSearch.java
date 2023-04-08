@@ -1,22 +1,22 @@
 public class InterpolationSearch {
-    public static int interpolationSearch (int[] sortedArray,int key){
+    public static int interpolationSearch(int[] sortedArray, int key) {
         int lo = 0;
         int mid = -1;
         int hi = sortedArray.length - 1;
 
-        while (true){
-            if (lo == hi || sortedArray[lo] == sortedArray[hi]){
+        while (true) {
+            if (lo == hi || sortedArray[lo] == sortedArray[hi]) {
                 System.out.println("key not found");
                 break;
             }
-            mid = lo + ((hi - lo) / (sortedArray[hi]- sortedArray[lo] ) * (key - sortedArray[lo]));
+            mid = lo + ((hi - lo) / (sortedArray[hi] - sortedArray[lo]) * (key - sortedArray[lo]));
             if (sortedArray[mid] == key) {
                 return mid;
-            }else{
-                if (sortedArray[mid] < key){
+            } else {
+                if (sortedArray[mid] < key) {
                     lo = mid + 1;
-                }else if(sortedArray[mid] > key){
-                    hi = mid-1;
+                } else if (sortedArray[mid] > key) {
+                    hi = mid - 1;
                 }
 
             }

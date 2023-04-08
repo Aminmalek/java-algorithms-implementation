@@ -1,4 +1,3 @@
-import javax.naming.PartialResultException;
 import java.util.Arrays;
 
 public class SelectionSort {

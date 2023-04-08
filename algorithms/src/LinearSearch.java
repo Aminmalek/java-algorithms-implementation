@@ -7,9 +7,9 @@ public class LinearSearch {
     }
 
     public static void main(String[] args) {
-        int[] a1= {10,20,30,50,70,90};
+        int[] a1 = {10, 20, 30, 50, 70, 90};
         int key = 50;
-        System.out.println(linearSearch( a1,key));
+        System.out.println(linearSearch(a1, key));
     }
 
 }
