@@ -17,7 +17,7 @@ The following algorithms are currently implemented in this repository:
 * Quick sort
 * LinearSearch
 * InterpolationSearch
-* shell Sort
+* Shell sort
 
 ## Data Structures
 The following data structures are currently implemented in this repository:
